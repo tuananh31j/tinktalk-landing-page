@@ -1,0 +1,26 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        /* If NOT transpiling with TypeScript: */
+        "moduleResolution": "Bundler",
+        "module": "ESNext",
+        "noEmit": true,
+        /* If your code runs in the DOM: */
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        /* React */
+        "jsx": "preserve",
+        /* NextJS */
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
+    },
+    "include": ["src", "tests", "next-env.d.ts", ".next/types/**/*.ts", "scripts", "scripts"],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+@import "normalize.css";
+
+@import "@mantine/core/styles.css";
+@import "@mantine/notifications/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --custom-pointer-cursor: url('/cursor/pointer.ico'), pointer; */
+  --custom-default-cursor: url("/cursor/default.ico"), default;
+
+  cursor: var(--custom-default-cursor);
+  ::selection {
+    background: var(--mantine-color-primary-9);
+    color: var(--mantine-color-white);
+  }
+  ::-moz-selection {
+    background: var(--mantine-color-primary-9);
+    color: var(--mantine-color-white);
+  }
+}
+/* .pointer {
+    cursor: var(--custom-pointer-cursor);
+}
+.cursor-pointer {
+    cursor: var(--custom-pointer-cursor);
+}
+img {
+    cursor: var(--custom-pointer-cursor);
+}
+button {
+    cursor: var(--custom-pointer-cursor);
+} */
+a {
+  color: inherit;
+  text-decoration: none;
+  /* cursor: var(--custom-pointer-cursor); */
+}
+
+/* SVG Line Animation for Hero Background */
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animated-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: dash var(--duration, 60s) linear infinite;
+  stroke-width: 2;
+  fill: none;
+  opacity: 0.6;
+}
